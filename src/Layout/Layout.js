@@ -1,7 +1,7 @@
 import React from 'react';
 
 import classes from "./Layout.module.css";
-import {Header} from "../components";
+import {Brands, Categories, Header} from "../components";
 
 
 const Layout = () => {
@@ -13,7 +13,8 @@ const Layout = () => {
 
             <section className={`${classes.blockMainInfo} width flex`}>
                 <aside className={`${classes.blockFilter} flex-direction`}>
-
+                    <Categories/>
+                    <Brands/>
                 </aside>
 
                 <section className={`${classes.blockSearchOutlet}`}>
