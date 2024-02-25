@@ -3,9 +3,29 @@
 }
 
 .blockHeader {
-    justify-content: space-between;
+
 }
 
 .blockMainInfo {
+
+}
+
+.blockFilter {
+    width: 20%;
+    min-height: 90vh;
+    background: #7E72F2;
+}
+
+.blockSearchOutlet {
+    width: 80%;
+    min-height: 90vh;
+    background: yellow;
+}
+
+.blockSearchOutletSearch {
+
+}
+
+.blockSearchOutletOutlet {
 
 }
