@@ -1,12 +1,30 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {useDispatch, useSelector} from "react-redux";
+import {v4} from "uuid";
 
 import classes from "./Brands.module.css";
+import {getAllBrands} from "../../store/slices/brand.slice";
+import {SingleItemCategoryBrand} from "../SingleItemCategoryBrand/SingleItemCategoryBrand";
 
 
 const Brands = () => {
+    const {brandsArr} = useSelector(store => store.brands);
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getAllBrands());
+    }, []);
+
+
     return (
         <main className={`${classes.wrap} width flex-direction`}>
-            Brands
+            <h2 className={`${classes.title} width`}>Brands</h2>
+
+            <article className={`width`}>
+                {brandsArr && brandsArr
+                        .map(obj => <SingleItemCategoryBrand key={v4()} obj={obj}/>)
+                }
+            </article>
         </main>
     );
 };

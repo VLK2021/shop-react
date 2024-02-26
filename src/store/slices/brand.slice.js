@@ -1,12 +1,13 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {productsService} from "../../services/products.service";
 
 
-export const getAllCategories = createAsyncThunk(
-    'categoriesSlice/getAllCategories',
+export const getAllBrands = createAsyncThunk(
+    'brandSlice/getAllBrands',
     async (_, {rejectWithValue}) => {
         try {
-            return await productsService.getAllCategories();
+            return await productsService.getAllBrands();
         } catch (e) {
             return rejectWithValue(e.message);
         }
@@ -15,35 +16,33 @@ export const getAllCategories = createAsyncThunk(
 
 
 const initialState = {
-    categoriesArr: [],
+    brandsArr: [],
     status: null,
     error: null,
 }
 
-
-const categoriesSlice = createSlice({
-    name: 'categoriesSlice',
+const brandSlice = createSlice({
+    name: 'brandSlice',
     initialState,
 
     reducers: {},
 
     extraReducers: builder => {
         builder
-            .addCase(getAllCategories.pending, (state) => {
-                state.status = 'loading';
+            .addCase(getAllBrands.pending, (state) => {
+                state.status = 'loading!';
             })
 
-            .addCase(getAllCategories.fulfilled, (state, action) => {
+            .addCase(getAllBrands.fulfilled, (state, action) => {
                 state.status = 'fulfilled';
-                state.categoriesArr = action.payload;
+                state.brandsArr = action.payload;
             })
 
-            .addCase(getAllCategories.rejected, (state, action) => {
+            .addCase(getAllBrands.rejected, (state, action) => {
                 state.status = 'rejected';
                 state.error = action.payload || 'Request failed';
-            });
+            })
     }
-
 });
 
-export default categoriesSlice.reducer;
+export default brandSlice.reducer;

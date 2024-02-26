@@ -1,0 +1,12 @@
+.wrap {
+    justify-content: start;
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+}
+
+.label {
+    margin-left: 1rem;
+    color: var(--var-color-text-h3-h6);
+    font-weight: bold;
+    font-style: italic;
+}
