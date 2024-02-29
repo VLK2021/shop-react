@@ -1,0 +1,17 @@
+.wrap {
+    margin-bottom: 1.5rem;
+}
+
+.title {
+    text-align: start;
+    color: var(--var-color-text-h2);
+}
+
+.sliderRating {
+    width: 90%;
+}
+
+.sliderRatingNumbers {
+    justify-content: space-between;
+    text-transform: uppercase;
+}
