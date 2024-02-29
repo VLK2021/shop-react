@@ -3,12 +3,12 @@ import {useDispatch, useSelector} from "react-redux";
 
 import classes from "./ProductsList.module.css";
 import {getAllProducts, getTotalProducts} from "../../store/slices/products.slice";
+import {ProductCard} from "../../components";
 
 
 const ProductsList = () => {
     const {error, productsArr, totalProductsInArr} = useSelector(store => store.products);
     const dispatch = useDispatch();
-    console.log(totalProductsInArr);
     const page = 1;
 
 
@@ -21,7 +21,10 @@ const ProductsList = () => {
 
     return (
         <main className={`${classes.wrap} width`}>
-            ProductsList
+            {
+                productsArr && productsArr
+                    .map(product => <ProductCard key={product.id} product={product}/>)
+            }
         </main>
     );
 };

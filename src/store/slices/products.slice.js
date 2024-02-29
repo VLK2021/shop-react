@@ -1,6 +1,6 @@
 import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+
 import {productsService} from "../../services/products.service";
-import {getAllCategories} from "./categories.slice";
 
 
 export const getAllProducts = createAsyncThunk(
@@ -18,7 +18,7 @@ export const getTotalProducts = createAsyncThunk(
     'productsSlice/getTotalProducts',
     async (page, {rejectWithValue}) => {
         try {
-           return  await productsService.getTotalPagesProducts(page);
+            return await productsService.getTotalPagesProducts(page);
 
         } catch (e) {
             return rejectWithValue(e.message);

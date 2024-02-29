@@ -1,0 +1,89 @@
+.wrap {
+    width: 32%;
+    height: 28rem;
+    border-radius: 0.3rem;
+    background: var(--var-bg-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.size {
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.3rem;
+    font-weight: 500;
+}
+
+.productCardImg {
+    width: 100%;
+    text-align: center;
+}
+
+.productCardImg > img {
+    width: 80%;
+    height: 9.5rem;
+    padding: 1rem 0 0 0;
+}
+
+.productCardPrice {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.8rem;
+    padding: 0 1rem 0 1rem;
+}
+
+.productCard-price-star {
+    width: 4rem;
+    background: var(--var-bg-btn-blockStar-h1);
+    color: var(--var-color-textInBlock-star-textActive);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.3rem;
+    padding: 0.2rem 0.4rem;
+}
+
+.productCard-price-star > img {
+    width: 0.9rem;
+    height: 0.9rem;
+}
+
+.productCardText {
+    width: 100%;
+    height: 6rem;
+    margin-top: 0.5rem;
+    padding: 0 1rem;
+}
+
+.productCard-price-price {
+    font-weight: bold;
+}
+
+.title{
+    height: 5rem;
+    font-size: 0.9rem;
+}
+
+.productCardTextTwo {
+    height: 4rem;
+    margin-top: 0.8rem;
+}
+
+button {
+    width: 100%;
+    background: var(--var-bg-btn-blockStar-h1);
+    color: var(--var-color-textInBlock-star-textActive);
+    border: none;
+    border-radius: 0 0 0.3rem 0.3rem;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.7rem 0 0.7rem 0;
+    margin-top: 0.6rem;
+    text-transform: uppercase;
+    cursor: pointer;
+}

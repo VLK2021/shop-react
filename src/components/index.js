@@ -4,3 +4,4 @@ export * from './Brands/Brands';
 export * from './SingleItemCategoryBrand/SingleItemCategoryBrand';
 export * from './SliderPrice/SliderPrice';
 export * from './SliderRating/SliderRating';
+export * from './ProductCard/ProductCard';

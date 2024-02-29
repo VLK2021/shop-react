@@ -14,7 +14,7 @@
 .blockFilter {
     width: 20%;
     padding: 0 0.5rem;
-    min-height: 90vh;
+    justify-content: start;
 }
 
 .clearBtn {
@@ -31,6 +31,7 @@
 .blockSearchOutlet {
     width: 80%;
     min-height: 90vh;
+    padding: 0.5rem;
 }
 
 .blockSearchOutletSearch {
