@@ -1,5 +1,6 @@
 import {Routes, Route} from "react-router-dom";
 import {Layout} from "./Layout";
+import {ProductsList} from "./pages";
 
 
 
@@ -8,6 +9,7 @@ function App() {
         <main>
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
+                    <Route index element={<ProductsList/>}/>
 
                 </Route>
             </Routes>

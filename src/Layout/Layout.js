@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {useNavigate} from "react-router-dom";
+import {useNavigate, Outlet} from "react-router-dom";
 
 import classes from "./Layout.module.css";
 import {Brands, Categories, Header, SliderPrice, SliderRating} from "../components";
@@ -51,7 +51,7 @@ const Layout = () => {
                     </article>
 
                     <article className={`${classes.blockSearchOutletOutlet} width`}>
-
+                        <Outlet/>
                     </article>
                 </section>
             </section>
