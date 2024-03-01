@@ -37,7 +37,7 @@
     padding: 0 1rem 0 1rem;
 }
 
-.productCard-price-star {
+.productCardPriceStar {
     width: 4rem;
     background: var(--var-bg-btn-blockStar-h1);
     color: var(--var-color-textInBlock-star-textActive);
@@ -48,7 +48,7 @@
     padding: 0.2rem 0.4rem;
 }
 
-.productCard-price-star > img {
+.productCardPriceStar > img {
     width: 0.9rem;
     height: 0.9rem;
 }
@@ -60,7 +60,7 @@
     padding: 0 1rem;
 }
 
-.productCard-price-price {
+.productCardPricePrice {
     font-weight: bold;
 }
 

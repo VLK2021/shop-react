@@ -3,11 +3,12 @@ import {useDispatch, useSelector} from "react-redux";
 
 import classes from "./ProductsList.module.css";
 import {getAllProducts, getTotalProducts} from "../../store/slices/products.slice";
-import {ProductCard} from "../../components";
+import {Pagination, ProductCard} from "../../components";
+
 
 
 const ProductsList = () => {
-    const {error, productsArr, totalProductsInArr} = useSelector(store => store.products);
+    const {error, productsArr} = useSelector(store => store.products);
     const dispatch = useDispatch();
     const page = 1;
 
@@ -25,6 +26,8 @@ const ProductsList = () => {
                 productsArr && productsArr
                     .map(product => <ProductCard key={product.id} product={product}/>)
             }
+
+            <Pagination/>
         </main>
     );
 };

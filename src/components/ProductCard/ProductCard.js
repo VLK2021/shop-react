@@ -2,6 +2,8 @@ import React from 'react';
 import {useDispatch} from "react-redux";
 
 import classes from "./ProductCard.module.css";
+import nextFot from '../../images/fotoF.jpg';
+import star from '../../images/Star.png';
 
 
 const ProductCard = ({product}) => {
@@ -17,17 +19,17 @@ const ProductCard = ({product}) => {
     return (
         <main className={`${classes.wrap}`}>
             <section className={`${classes.productCardImg}`}>
-                <img src={images[0] ? images[0] : ''} alt="foot"/>
+                <img src={images[0] ? images[0] : nextFot} alt="foot"/>
             </section>
 
             <section className={`${classes.productCardPrice}`}>
-            {/*    <div className="productCard-price-star">*/}
-            {/*        <p className="size">{rating}</p>*/}
-            {/*        <img src={star} alt="icon"/>*/}
-            {/*    </div>*/}
-            {/*    <p className="productCard-price-price size">*/}
-            {/*        {price}*/}
-            {/*    </p>*/}
+                <article className={`${classes.productCardPriceStar}`}>
+                    <p className={`${classes.size}`}>{rating}</p>
+                    <img src={star} alt="icon"/>
+                </article>
+                <p className={`${classes.productCardPricePrice} ${classes.size}`}>
+                    {price}
+                </p>
             </section>
 
             <section className={`${classes.productCardText}`}>
