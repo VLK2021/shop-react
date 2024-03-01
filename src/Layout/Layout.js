@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {useNavigate, Outlet} from "react-router-dom";
 
 import classes from "./Layout.module.css";
-import {Brands, Categories, Header, SliderPrice, SliderRating} from "../components";
+import {Brands, Categories, FormForSearch, Header, SliderPrice, SliderRating} from "../components";
 
 
 const Layout = () => {
@@ -47,7 +47,7 @@ const Layout = () => {
 
                 <section className={`${classes.blockSearchOutlet}`}>
                     <article className={`${classes.blockSearchOutletSearch} width`}>
-
+                        <FormForSearch/>
                     </article>
 
                     <article className={`${classes.blockSearchOutletOutlet} width`}>

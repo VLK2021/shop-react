@@ -1,0 +1,16 @@
+.wrap {
+    padding: 0.5rem 0.3rem 0.5rem 0.3rem;
+}
+
+.searchInput {
+    height: 2rem;
+    border-radius: 0.3rem;
+    padding: 0 0 0 1rem;
+    font-style: italic;
+    border: 1px solid var(--var-bg-btn-blockStar-h1);
+}
+
+.searchInput:hover {
+    border: 3px solid var(--var-bg-btn-blockStar-h1);
+    cursor: pointer;
+}

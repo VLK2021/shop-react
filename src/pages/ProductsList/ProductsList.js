@@ -8,7 +8,7 @@ import {Pagination, ProductCard} from "../../components";
 
 
 const ProductsList = () => {
-    const {error, productsArr} = useSelector(store => store.products);
+    const {productsArr} = useSelector(store => store.products);
     const dispatch = useDispatch();
     const page = 1;
 
