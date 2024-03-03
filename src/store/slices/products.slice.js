@@ -26,6 +26,7 @@ export const getTotalProducts = createAsyncThunk(
     }
 );
 
+
 const initialState = {
     productsArr: [],
     status: null,
@@ -48,6 +49,7 @@ const productsSlice = createSlice({
                 state.status = 'Loading!'
             })
 
+
             .addCase(getAllProducts.fulfilled, (state, action) => {
                 state.status = 'fulfilled'
                 state.productsArr = action.payload
@@ -56,6 +58,7 @@ const productsSlice = createSlice({
                 state.status = 'fulfilled'
                 state.totalProductsInArr = action.payload
             })
+
 
             .addCase(getAllProducts.rejected, (state, action) => {
                 state.status = 'rejected';
