@@ -32,7 +32,7 @@ const initialState = {
     searchArr: [],
     status: null,
     error: null,
-    totalProductsInArr: 18,
+    totalSearchProductsInArr: 18,
 }
 
 const searchSlice = createSlice({
@@ -56,7 +56,7 @@ const searchSlice = createSlice({
             })
             .addCase(getTotalSearch.fulfilled, (state, action) => {
                 state.status = 'fulfilled';
-                state.totalProductsInArr = action.payload;
+                state.totalSearchProductsInArr = action.payload;
             })
 
             .addCase(getSearchProducts.rejected, (state, action) => {

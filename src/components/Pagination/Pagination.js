@@ -5,14 +5,22 @@ import {AiOutlineLeft, AiOutlineRight} from "react-icons/ai";
 
 import classes from "./Pagination.module.css";
 import {getAllProducts} from "../../store/slices/products.slice";
+import {getSearchProducts} from "../../store/slices/search.slice";
 
 
 const Pagination = () => {
     const {totalProductsInArr} = useSelector(store => store.products);
-    const endPagesFinal = Math.ceil(totalProductsInArr / 9);
+    const {totalSearchProductsInArr} = useSelector(store => store.search);
+    const {q} = useParams();
+
+    let endPagesFinal;
+    if (q) {
+        endPagesFinal = Math.ceil(totalSearchProductsInArr / 9)
+    } else {
+        endPagesFinal = Math.ceil(totalProductsInArr / 9)
+    }
 
     const dispatch = useDispatch();
-    const {word} = useParams();
 
     const [startPage, setStartPage] = useState(1);
     const [endPage, setEndPage] = useState(0);
@@ -35,10 +43,10 @@ const Pagination = () => {
             setPage(page);
         }
 
-        // if (getSearchProducts) {
-        //     dispatch(getSearchProducts({word, page}));
-        //     setPage(page);
-        // }
+        if (getSearchProducts) {
+            dispatch(getSearchProducts({word: q, page}));
+            setPage(page);
+        }
     };
 
 
