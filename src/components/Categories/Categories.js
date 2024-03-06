@@ -4,7 +4,7 @@ import {v4} from 'uuid';
 
 import classes from "./Categories.module.css";
 import {getAllCategories} from "../../store/slices/categories.slice";
-import {SingleItemCategoryBrand} from "../SingleItemCategoryBrand/SingleItemCategoryBrand";
+import {Category} from "../Category/Category";
 
 
 const Categories = () => {
@@ -22,7 +22,7 @@ const Categories = () => {
 
             <article className={`width`}>
                 {categoriesArr && categoriesArr
-                    .map(obj => <SingleItemCategoryBrand key={v4()} obj={obj}/>)
+                    .map(obj => <Category key={v4()} obj={obj}/>)
             }
             </article>
         </main>
