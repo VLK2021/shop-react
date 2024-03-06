@@ -15,11 +15,18 @@ const Category = ({obj}) => {
 
     const changeInput = (e) => {
         const category = e.target.value;
+        const selectedCategories = query.getAll('category');
+
         if (e.target.checked === true) {
-
+            selectedCategories.push(category);
         } else {
-
+            const index = selectedCategories.indexOf(category);
+            if (index !== -1) {
+                selectedCategories.splice(index, 1);
+            }
         }
+
+        setQuery({ category: selectedCategories });
     };
 
 
@@ -31,6 +38,7 @@ const Category = ({obj}) => {
                 name={obj.replace(' ', "_")}
                 onChange={changeInput}
                 value={obj}
+                checked={query.getAll('category').includes(obj)}
             />
             <label htmlFor={obj} className={`${classes.label}`}>{obj}</label>
         </main>
