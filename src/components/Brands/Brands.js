@@ -22,7 +22,7 @@ const Brands = () => {
 
             <article className={`width`}>
                 {brandsArr && brandsArr
-                        .map(obj => <Brand key={v4()} obj={obj}/>)
+                        .map(obj => <Brand key={v4()} obj={obj} paramKey={'brand'}/>)
                 }
             </article>
         </main>

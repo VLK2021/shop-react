@@ -22,7 +22,7 @@ const Categories = () => {
 
             <article className={`width`}>
                 {categoriesArr && categoriesArr
-                    .map(obj => <Category key={v4()} obj={obj}/>)
+                    .map(obj => <Category key={v4()} obj={obj} paramKey={'category'}/>)
             }
             </article>
         </main>
