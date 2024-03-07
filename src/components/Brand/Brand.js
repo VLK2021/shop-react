@@ -8,16 +8,9 @@ const Brand = ({obj, paramKey}) => {
     const [query, setQuery] = useSearchParams();
     const page = 1;
 
-    // useEffect(() => {
-    //     const category = query.getAll('category');
-    //     const brand = query.getAll('brand');
-    //
-    //     console.log('Sending request with parameters:', {
-    //         category,
-    //         brand,
-    //     });
-    //
-    // }, [query]);
+    useEffect(() => {
+        const word = query.toString();
+    }, [query]);
 
     const changeInput = (e) => {
         const currentBrand = e.target.value;
@@ -32,9 +25,7 @@ const Brand = ({obj, paramKey}) => {
             }
         }
 
-        // const existingParams = Object.fromEntries(query.entries());
-        // console.log(existingParams);
-        setQuery({ ...query, brand: selectedBrands, category: query.getAll('category') });
+        setQuery({...query, category: query.getAll('category'), brand: selectedBrands});
     };
 
 
