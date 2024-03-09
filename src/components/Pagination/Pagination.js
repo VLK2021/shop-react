@@ -8,10 +8,11 @@ import {getAllProducts} from "../../store/slices/products.slice";
 import {getSearchProducts} from "../../store/slices/search.slice";
 
 
-const Pagination = () => {
+const Pagination = ({word}) => {
     const {totalProductsInArr} = useSelector(store => store.products);
     const {totalSearchProductsInArr} = useSelector(store => store.search);
     const {q} = useParams();
+    console.log(word);
 
     let endPagesFinal;
     if (q) {
@@ -39,7 +40,7 @@ const Pagination = () => {
 
     const onPageChange = (page) => {
         if (getAllProducts) {
-            dispatch(getAllProducts(page));
+            dispatch(getAllProducts({word, page}));
             setPage(page);
         }
 

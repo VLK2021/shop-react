@@ -1,15 +1,21 @@
 import React, {useEffect} from 'react';
-import {useSearchParams} from "react-router-dom";
+import {useNavigate, useSearchParams} from "react-router-dom";
+import {useDispatch} from "react-redux";
 
 import classes from "./Category.module.css";
+import {getSearchProducts} from "../../store/slices/search.slice";
 
 
 const Category = ({obj, paramKey}) => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
     const [query, setQuery] = useSearchParams();
     const page = 1;
 
     useEffect(() => {
         const word = query.toString();
+        dispatch(getSearchProducts({word, page}));
+
     }, [query]);
 
     const changeInput = (e) => {

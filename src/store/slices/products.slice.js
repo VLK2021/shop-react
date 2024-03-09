@@ -5,9 +5,9 @@ import {productsService} from "../../services/products.service";
 
 export const getAllProducts = createAsyncThunk(
     'productsSlice/getAllProducts',
-    async (page, {rejectWithValue}) => {
+    async ({word, page}, {rejectWithValue}) => {
         try {
-            return await productsService.getAllProducts(page);
+            return await productsService.getAllProducts(word, page);
         } catch (e) {
             return rejectWithValue(e.message);
         }
@@ -16,9 +16,9 @@ export const getAllProducts = createAsyncThunk(
 
 export const getTotalProducts = createAsyncThunk(
     'productsSlice/getTotalProducts',
-    async (page, {rejectWithValue}) => {
+    async ({word, page}, {rejectWithValue}) => {
         try {
-            return await productsService.getTotalPagesProducts(page);
+            return await productsService.getTotalPagesProducts(word, page);
 
         } catch (e) {
             return rejectWithValue(e.message);

@@ -1,6 +1,7 @@
 import {Routes, Route} from "react-router-dom";
+
 import {Layout} from "./Layout";
-import {ProductsList, SearchProducts, SingleProduct} from "./pages";
+import {ProductsList, SingleProduct} from "./pages";
 
 
 function App() {
@@ -9,8 +10,8 @@ function App() {
             <Routes>
                 <Route path={'/'} element={<Layout/>}>
                     <Route index element={<ProductsList/>}/>
-                    <Route path={':id'} element={<SingleProduct/>}/>
-                    <Route path={'search/:q'} element={<SearchProducts/>}/>
+                    <Route path={'productDetails/:id'} element={<SingleProduct/>}/>
+                    {/*<Route path={'search/:q'} element={<SearchProducts/>}/>*/}
                 </Route>
             </Routes>
         </main>

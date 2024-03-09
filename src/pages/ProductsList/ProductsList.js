@@ -11,11 +11,12 @@ const ProductsList = () => {
     const {productsArr} = useSelector(store => store.products);
     const dispatch = useDispatch();
     const page = 1;
+    const word = '';
 
 
     useEffect(() => {
-        dispatch(getAllProducts(page));
-        dispatch(getTotalProducts(page));
+        dispatch(getAllProducts({word, page}));
+        dispatch(getTotalProducts({word, page}));
     }, []);
 
 
@@ -27,7 +28,7 @@ const ProductsList = () => {
                     .map(product => <ProductCard key={product.id} product={product}/>)
             }
 
-            <Pagination/>
+            <Pagination word={word}/>
         </main>
     );
 };
