@@ -17,6 +17,10 @@ const Category = ({obj, paramKey}) => {
         if (word.includes('category')) {
             dispatch(getAllProducts({word, page}));
             dispatch(getTotalProducts({word, page}));
+        } else {
+            const word = query.toString().toLowerCase();
+            dispatch(getAllProducts({word, page}));
+            dispatch(getTotalProducts({word, page}));
         }
 
     }, [query]);
@@ -45,8 +49,8 @@ const Category = ({obj, paramKey}) => {
                 id={obj}
                 name={obj.replace(' ', "_")}
                 onChange={changeInput}
-                value={obj}
-                checked={query.getAll(paramKey).includes(obj)}
+                value={obj.replace(' ', "_")}
+                checked={query.getAll(paramKey).includes(obj.replace(' ', "_"))}
             />
             <label htmlFor={obj} className={`${classes.label}`}>{obj}</label>
         </main>
