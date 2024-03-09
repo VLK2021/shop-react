@@ -6,7 +6,6 @@ import {getAllProducts, getTotalProducts} from "../../store/slices/products.slic
 import {Pagination, ProductCard} from "../../components";
 
 
-
 const ProductsList = () => {
     const {productsArr} = useSelector(store => store.products);
     const dispatch = useDispatch();
@@ -20,7 +19,6 @@ const ProductsList = () => {
     }, []);
 
 
-
     return (
         <main className={`${classes.wrap} width`}>
             {
@@ -28,7 +26,9 @@ const ProductsList = () => {
                     .map(product => <ProductCard key={product.id} product={product}/>)
             }
 
-            <Pagination word={word}/>
+            <section className={`width`}>
+                <Pagination word={word}/>
+            </section>
         </main>
     );
 };

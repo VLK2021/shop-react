@@ -1,15 +1,28 @@
 import React, {useEffect} from 'react';
+import {useSearchParams} from "react-router-dom";
+import {useDispatch} from "react-redux";
 
 import classes from "../Category/Category.module.css";
-import {useSearchParams} from "react-router-dom";
+import {getAllProducts, getTotalProducts} from "../../store/slices/products.slice";
 
 
 const Brand = ({obj, paramKey}) => {
+    const dispatch = useDispatch();
     const [query, setQuery] = useSearchParams();
     const page = 1;
 
     useEffect(() => {
-        const word = query.toString();
+        const word = query.toString().toLowerCase();
+
+        if (word.includes('brand')) {
+            dispatch(getAllProducts({word, page}));
+            dispatch(getTotalProducts({word, page}));
+        } else {
+            const word = query.toString().toLowerCase();
+            dispatch(getAllProducts({word, page}));
+            dispatch(getTotalProducts({word, page}));
+        }
+
     }, [query]);
 
     const changeInput = (e) => {
@@ -36,8 +49,8 @@ const Brand = ({obj, paramKey}) => {
                 id={obj}
                 name={obj.replace(' ', "_")}
                 onChange={changeInput}
-                value={obj}
-                checked={query.getAll(paramKey).includes(obj)}
+                value={obj.replace(' ', "_")}
+                checked={query.getAll(paramKey).includes(obj.replace(' ', "_"))}
             />
             <label htmlFor={obj} className={`${classes.label}`}>{obj}</label>
         </main>
