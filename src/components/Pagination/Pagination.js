@@ -1,25 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
-import {useParams} from "react-router-dom";
 import {AiOutlineLeft, AiOutlineRight} from "react-icons/ai";
 
 import classes from "./Pagination.module.css";
 import {getAllProducts} from "../../store/slices/products.slice";
-import {getSearchProducts} from "../../store/slices/search.slice";
 
 
 const Pagination = ({word}) => {
     const {totalProductsInArr} = useSelector(store => store.products);
-    const {totalSearchProductsInArr} = useSelector(store => store.search);
-    const {q} = useParams();
-    console.log(word);
 
-    let endPagesFinal;
-    if (q) {
-        endPagesFinal = Math.ceil(totalSearchProductsInArr / 9)
-    } else {
-        endPagesFinal = Math.ceil(totalProductsInArr / 9)
-    }
+    const endPagesFinal = Math.ceil(totalProductsInArr / 9)
 
     const dispatch = useDispatch();
 
@@ -43,13 +33,7 @@ const Pagination = ({word}) => {
             dispatch(getAllProducts({word, page}));
             setPage(page);
         }
-
-        if (getSearchProducts) {
-            dispatch(getSearchProducts({word: q, page}));
-            setPage(page);
-        }
     };
-
 
 
     return (

@@ -11,7 +11,6 @@ function App() {
                 <Route path={'/'} element={<Layout/>}>
                     <Route index element={<ProductsList/>}/>
                     <Route path={'productDetails/:id'} element={<SingleProduct/>}/>
-                    {/*<Route path={'search/:q'} element={<SearchProducts/>}/>*/}
                 </Route>
             </Routes>
         </main>
