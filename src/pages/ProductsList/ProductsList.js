@@ -27,7 +27,7 @@ const ProductsList = () => {
             }
 
             <section className={`width`}>
-                <Pagination word={word}/>
+                <Pagination/>
             </section>
         </main>
     );

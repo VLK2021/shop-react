@@ -4,9 +4,11 @@ import {AiOutlineLeft, AiOutlineRight} from "react-icons/ai";
 
 import classes from "./Pagination.module.css";
 import {getAllProducts} from "../../store/slices/products.slice";
+import {useSearchParams} from "react-router-dom";
 
 
-const Pagination = ({word}) => {
+const Pagination = () => {
+    const [query, setQuery] = useSearchParams();
     const {totalProductsInArr} = useSelector(store => store.products);
 
     const endPagesFinal = Math.ceil(totalProductsInArr / 9)
@@ -29,6 +31,8 @@ const Pagination = ({word}) => {
     }
 
     const onPageChange = (page) => {
+        const word = query.toString().toLowerCase();
+
         if (getAllProducts) {
             dispatch(getAllProducts({word, page}));
             setPage(page);
