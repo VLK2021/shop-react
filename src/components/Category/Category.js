@@ -38,7 +38,13 @@ const Category = ({obj, paramKey}) => {
             }
         }
 
-        setQuery({ ...query, category: selectedCategories, brand: query.getAll('brand') });
+        setQuery({
+            ...query,
+            category: selectedCategories,
+            brand: query.getAll('brand'),
+            price_gte: query.getAll('price_gte'),
+            price_lte: query.getAll('price_lte'),
+        });
     };
 
 

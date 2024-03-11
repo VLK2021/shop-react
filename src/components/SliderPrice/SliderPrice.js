@@ -24,26 +24,12 @@ const SliderPrice = ({value, setValue}) => {
         })
     }
 
-    // useEffect(() => {
-    //     const word = query.toString().toLowerCase();
-    //
-    //     if (word.includes('price')) {
-    //         dispatch(getAllProducts({word, page}));
-    //         dispatch(getTotalProducts({word, page}));
-    //     } else {
-    //         const word = query.toString().toLowerCase();
-    //         dispatch(getAllProducts({word, page}));
-    //         dispatch(getTotalProducts({word, page}));
-    //     }
-    //
-    // }, [query]);
-
     useEffect(() => {
         const word = query.toString().toLowerCase();
 
         dispatch(getAllProducts({ word, page }));
         dispatch(getTotalProducts({ word, page }));
-    }, [query, page, dispatch]);
+    }, [query]);
 
     const valuetext = (e) => `${value}`;
 
