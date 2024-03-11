@@ -37,6 +37,8 @@ const Brand = ({obj, paramKey}) => {
             brand: selectedBrands,
             price_gte: query.getAll('price_gte'),
             price_lte: query.getAll('price_lte'),
+            rating_gte: query.getAll('rating_gte'),
+            rating_lte: query.getAll('rating_lte'),
         });
     };
 

@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from "react-redux";
 import {AiOutlineLeft, AiOutlineRight} from "react-icons/ai";
+import {useSearchParams} from "react-router-dom";
 
 import classes from "./Pagination.module.css";
-import {getAllProducts} from "../../store/slices/products.slice";
-import {useSearchParams} from "react-router-dom";
+import {getAllProducts, getTotalProducts} from "../../store/slices/products.slice";
 
 
 const Pagination = () => {
@@ -35,6 +35,7 @@ const Pagination = () => {
 
         if (getAllProducts) {
             dispatch(getAllProducts({word, page}));
+            dispatch(getTotalProducts({word, page}));
             setPage(page);
         }
     };

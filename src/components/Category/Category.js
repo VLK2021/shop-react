@@ -14,15 +14,8 @@ const Category = ({obj, paramKey}) => {
     useEffect(() => {
         const word = query.toString().toLowerCase();
 
-        if (word.includes('category')) {
-            dispatch(getAllProducts({word, page}));
-            dispatch(getTotalProducts({word, page}));
-        } else {
-            const word = query.toString().toLowerCase();
-            dispatch(getAllProducts({word, page}));
-            dispatch(getTotalProducts({word, page}));
-        }
-
+        dispatch(getAllProducts({word, page}));
+        dispatch(getTotalProducts({word, page}));
     }, [query]);
 
     const changeInput = (e) => {
@@ -44,6 +37,8 @@ const Category = ({obj, paramKey}) => {
             brand: query.getAll('brand'),
             price_gte: query.getAll('price_gte'),
             price_lte: query.getAll('price_lte'),
+            rating_gte: query.getAll('rating_gte'),
+            rating_lte: query.getAll('rating_lte'),
         });
     };
 

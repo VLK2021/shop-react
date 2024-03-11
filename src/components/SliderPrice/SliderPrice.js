@@ -21,6 +21,8 @@ const SliderPrice = ({value, setValue}) => {
             brand: query.getAll('brand'),
             price_gte: value[0],
             price_lte: value[1],
+            rating_gte: query.getAll('rating_gte'),
+            rating_lte: query.getAll('rating_lte'),
         })
     }
 

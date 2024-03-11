@@ -1,17 +1,39 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Slider} from "@mui/material";
+import {useDispatch} from "react-redux";
+import {useSearchParams} from "react-router-dom";
 
 import classes from "./SliderRating.module.css";
+import {getAllProducts, getTotalProducts} from "../../store/slices/products.slice";
 
 
 const SliderRating = ({valueRating, setValueRating}) => {
+    const dispatch = useDispatch();
+    const [query, setQuery] = useSearchParams();
+
+    const page = 1;
 
     const handleChange = (e, valueRating) => {
         setValueRating(valueRating);
+        setQuery({
+            ...query,
+            category: query.getAll('category'),
+            brand: query.getAll('brand'),
+            price_gte: query.getAll('price_gte'),
+            price_lte: query.getAll('price_lte'),
+            rating_gte: valueRating[0],
+            rating_lte: valueRating[1],
+        })
     }
 
-    const valuetext = (e) => `${valueRating}`;
+    useEffect(() => {
+        const word = query.toString().toLowerCase();
 
+        dispatch(getAllProducts({word, page}));
+        dispatch(getTotalProducts({word, page}));
+    }, [query]);
+
+    const valuetext = (e) => `${valueRating}`;
 
 
     return (
@@ -28,7 +50,6 @@ const SliderRating = ({valueRating, setValueRating}) => {
                 valueLabelDisplay="auto"
                 aria-labelledby="range-slider"
                 getAriaValueText={valuetext}
-                // onClick={changeRating}
             />
 
             <div className={`${classes.sliderRatingNumbers} flex width`}>
