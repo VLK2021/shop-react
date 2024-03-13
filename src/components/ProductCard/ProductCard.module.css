@@ -74,8 +74,12 @@
     margin-top: 0.8rem;
 }
 
+.blockBtn {
+    justify-content: space-between;
+}
+
 button {
-    width: 100%;
+    width: 49%;
     background: var(--var-bg-btn-blockStar-h1);
     color: var(--var-color-textInBlock-star-textActive);
     border: none;
@@ -87,3 +91,8 @@ button {
     text-transform: uppercase;
     cursor: pointer;
 }
+
+.navLink {
+    color: var(--var-color-textInBlock-star-textActive);
+}
+

@@ -1,5 +1,6 @@
 import React from 'react';
 import {useDispatch} from "react-redux";
+import {NavLink} from 'react-router-dom';
 
 import classes from "./ProductCard.module.css";
 import nextFot from '../../images/fotoF.jpg';
@@ -7,7 +8,7 @@ import star from '../../images/Star.png';
 
 
 const ProductCard = ({product}) => {
-    const {category, price, rating, title, images} = product;
+    const {id, category, price, rating, title, images} = product;
     const dispatch = useDispatch();
 
 
@@ -18,6 +19,7 @@ const ProductCard = ({product}) => {
 
     return (
         <main className={`${classes.wrap}`}>
+
             <section className={`${classes.productCardImg}`}>
                 <img src={images[0] ? images[0] : nextFot} alt="foot"/>
             </section>
@@ -37,7 +39,17 @@ const ProductCard = ({product}) => {
                 <p className={`${classes.productCardTextTwo} ${classes.size}`}><span>{category}</span></p>
             </section>
 
-            <button onClick={handleClick}>add to cart</button>
+            <section className={`width flex ${classes.blockBtn}`}>
+                <button onClick={handleClick}>add to cart</button>
+
+
+                <button>
+                    <NavLink to={`productDetails/${id}`} className={classes.navLink}>
+                        details
+                    </NavLink>
+                </button>
+            </section>
+
         </main>
     );
 };
