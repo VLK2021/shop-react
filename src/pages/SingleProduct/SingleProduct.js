@@ -1,16 +1,17 @@
 import React from 'react';
+import {useParams} from "react-router-dom";
 
 import classes from "./SingleProduct.module.css";
-import {useSelector} from "react-redux";
 
 
 const SingleProduct = () => {
-    const {productsArr} = useSelector(store => store.products);
+    const {id} = useParams();
+
 
 
     return (
         <main className={`${classes.wrap} width`}>
-            SingleProduct
+
         </main>
     );
 };
