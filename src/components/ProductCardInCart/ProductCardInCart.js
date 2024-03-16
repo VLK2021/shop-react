@@ -36,7 +36,7 @@ const ProductCardInCart = ({prod}) => {
             </section>
 
             <div className={`${classes.productCardInCartAddDell}`}>
-                <BiMinusCircle className={'BiMinusCircle'} size={20} onClick={minusProduct}/>
+                <BiMinusCircle className={`${classes.BiMinusCircle}`} size={20} onClick={minusProduct}/>
 
                 <p className={`${classes.productCardInCartAddDellCount}`}>{count}</p>
 
