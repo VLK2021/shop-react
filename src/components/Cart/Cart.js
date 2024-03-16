@@ -1,9 +1,10 @@
 import React, {useState} from 'react';
 import {useSelector} from "react-redux";
+import {BiCartAlt} from "react-icons/bi";
 
 import classes from "./Cart.module.css";
-import {BiCartAlt} from "react-icons/bi";
 import {CartList} from "../../pages";
+import {CartCircle} from "../CartCircle/CartCircle";
 
 
 const Cart = () => {
@@ -14,6 +15,8 @@ const Cart = () => {
     return (
         <main className={`${classes.wrap}`}>
             <section className={`${classes.cartBlockFirst} flex`}>
+                <CartCircle arr={cartArr}/>
+
                 <BiCartAlt
                     size={30}
                     className={`${classes.cartBlockBitCartAlt}`}

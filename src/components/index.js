@@ -10,3 +10,4 @@ export * from './Category/Category';
 export * from './Brand/Brand';
 export * from './Cart/Cart';
 export * from './ProductCardInCart/ProductCardInCart';
+export * from './CartCircle/CartCircle';

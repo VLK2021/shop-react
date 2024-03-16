@@ -1,0 +1,12 @@
+.wrap {
+    position: absolute;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.75rem;
+    background: red;
+    font-weight: bold;
+    color: #FFFFFF;
+    z-index: 2;
+    top: -0.3rem;
+    left: 0.6rem;
+}
