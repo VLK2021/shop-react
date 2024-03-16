@@ -1,0 +1,32 @@
+.wrap {
+    width: 10rem;
+    background: var(--var-bg-btn-blockStar-h1);
+    color: var(--var-bg-color);
+    padding: 0.7rem;
+    border-radius: 0.3rem;
+    text-align: center;
+}
+
+.cartBlockFirst {
+    position: relative;
+}
+
+.cartBlockBitCartAlt {
+    position: relative;
+    cursor: pointer;
+    margin-right: 0.3rem;
+    font-size: 0.3rem;
+}
+
+.cartBlockSecond {
+    margin-top: 0.2rem;
+}
+
+.cartBlockText {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.cartBlockTotalPrice {
+    font-weight: bold;
+}

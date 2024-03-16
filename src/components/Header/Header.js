@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from "react-router-dom";
 
 import classes from "./Header.module.css";
+import {Cart} from "../Cart/Cart";
 
 
 const Header = () => {
@@ -12,7 +13,7 @@ const Header = () => {
             </Link>
 
             <section className={`${classes.blockCart}`}>
-
+                <Cart/>
             </section>
         </main>
     );

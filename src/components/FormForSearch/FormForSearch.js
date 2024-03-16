@@ -23,7 +23,6 @@ const FormForSearch = () => {
 
     useEffect(() => {
         const q = query.get('q');
-        console.log(q);
 
         dispatch(getAllProducts({word: `q=${q}`, page}));
         dispatch(getTotalProducts({word: `q=${q}`, page}));

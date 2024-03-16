@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import {useParams, NavLink, useNavigate} from "react-router-dom";
+import {useParams, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
+import {AiOutlineArrowLeft} from "react-icons/ai";
 
 import classes from "./SingleProduct.module.css";
 import {getSingleProduct} from "../../store/slices/singleProduct.slice";
 import nextFot from '../../images/fotoF.jpg';
-import {AiOutlineArrowLeft} from "react-icons/ai";
 
 
 const SingleProduct = () => {
@@ -39,7 +39,7 @@ const SingleProduct = () => {
                     </section>
 
                     <section className={`${classes.productCardImg} width flex`}>
-                        <img src={images[0] ? images[0] : nextFot} alt="foot"/>
+                        {images && < img src={images[0] ? images[0] : nextFot} alt="foot"/>}
                     </section>
 
                 </main>

@@ -5,6 +5,7 @@ import {NavLink} from 'react-router-dom';
 import classes from "./ProductCard.module.css";
 import nextFot from '../../images/fotoF.jpg';
 import star from '../../images/Star.png';
+import {cartActions} from "../../store/slices/cart.slice";
 
 
 const ProductCard = ({product}) => {
@@ -14,6 +15,7 @@ const ProductCard = ({product}) => {
 
     const handleClick = (e) => {
         e.stopPropagation();
+        dispatch(cartActions.setProductInCart(product))
     }
 
 
@@ -41,7 +43,6 @@ const ProductCard = ({product}) => {
 
             <section className={`width flex ${classes.blockBtn}`}>
                 <button onClick={handleClick}>add to cart</button>
-
 
                 <button>
                     <NavLink to={`productDetails/${id}`} className={classes.navLink}>

@@ -4,6 +4,7 @@ import categoriesReducer from './slices/categories.slice';
 import brandsReducer from './slices/brand.slice';
 import productsReducer from './slices/products.slice';
 import singleProductReducer from './slices/singleProduct.slice';
+import cartReducer from './slices/cart.slice';
 
 
 const rootReducer = combineReducers({
@@ -11,6 +12,7 @@ const rootReducer = combineReducers({
     brands: brandsReducer,
     products: productsReducer,
     singleProduct: singleProductReducer,
+    cart: cartReducer,
 });
 
 

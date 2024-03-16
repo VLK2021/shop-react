@@ -8,3 +8,5 @@ export * from './Pagination/Pagination';
 export * from './FormForSearch/FormForSearch';
 export * from './Category/Category';
 export * from './Brand/Brand';
+export * from './Cart/Cart';
+export * from './ProductCardInCart/ProductCardInCart';
