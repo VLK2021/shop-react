@@ -5,3 +5,18 @@
 .productCardImg {
 
 }
+
+.blockBtn {
+    justify-content: start;
+    margin: 1rem;
+}
+
+.btn {
+    width: 20%;
+    border-radius: 1rem;
+}
+
+.icon {
+    margin: 0 0.5rem 0 0;
+    font-size: 1.2rem;
+}
