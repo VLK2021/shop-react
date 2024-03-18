@@ -64,7 +64,7 @@
     font-weight: bold;
 }
 
-.title{
+.title {
     height: 5rem;
     font-size: 0.9rem;
 }
@@ -97,6 +97,7 @@ button {
 }
 
 .navLink:hover {
+    background: var(--var-bg-color);
     color: var(--var-bg-btn-blockStar-h1);
 }
 
