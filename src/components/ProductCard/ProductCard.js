@@ -15,7 +15,8 @@ const ProductCard = ({product}) => {
 
     const handleClick = (e) => {
         e.stopPropagation();
-        dispatch(cartActions.setProductInCart(product))
+        dispatch(cartActions.setProductInCart(product));
+        alert(`product ${title} added to cart!`);
     }
 
 

@@ -81,7 +81,7 @@
 button {
     width: 49%;
     background: var(--var-bg-btn-blockStar-h1);
-    color: var(--var-color-textInBlock-star-textActive);
+    color: var(--var-bg-color);
     border: none;
     border-radius: 0 0 0.3rem 0.3rem;
     font-weight: bold;
@@ -93,6 +93,10 @@ button {
 }
 
 .navLink {
-    color: var(--var-color-textInBlock-star-textActive);
+    color: var(--var-bg-color);
+}
+
+.navLink:hover {
+    color: var(--var-bg-btn-blockStar-h1);
 }
 

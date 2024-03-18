@@ -33,3 +33,9 @@ a{
     justify-content: center;
     align-items: center;
 }
+
+button:hover {
+    background: var(--var-bg-color);
+    color: var(--var-bg-btn-blockStar-h1);
+    border: 1px solid var(--var-bg-btn-blockStar-h1);
+}
