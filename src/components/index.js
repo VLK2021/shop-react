@@ -12,3 +12,4 @@ export * from './Cart/Cart';
 export * from './ProductCardInCart/ProductCardInCart';
 export * from './CartCircle/CartCircle';
 export * from './HeaderTitle/HeaderTitle';
+export * from './Spinner/Spinner';
