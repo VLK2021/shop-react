@@ -7,7 +7,7 @@ import {Pagination, ProductCard} from "../../components";
 
 
 const ProductsList = () => {
-    const {productsArr} = useSelector(store => store.products);
+    const {error, productsArr} = useSelector(store => store.products);
     const dispatch = useDispatch();
     const page = 1;
     const word = '';
@@ -19,8 +19,11 @@ const ProductsList = () => {
     }, []);
 
 
+
     return (
         <main className={`${classes.wrap} width`}>
+            {error && <h1>{error}</h1>}
+
             {
                 productsArr && productsArr
                     .map(product => <ProductCard key={product.id} product={product}/>)
