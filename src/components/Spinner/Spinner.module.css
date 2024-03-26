@@ -5,6 +5,14 @@
     transform: translate(-50%, -50%);
 }
 
+.spinner > p {
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 2rem 0;
+}
+
 .wrap {
     width: 50px;
     height: 50px;
@@ -14,17 +22,17 @@
     animation: spin 1s linear infinite;
 }
 
-.circle-1 {
+.circle1 {
     background-color: #005BBB;
     animation-delay: 0.2s;
 }
 
-.circle-2 {
+.circle2 {
     background-color: #FEDF00;
     animation-delay: 0.4s;
 }
 
-.circle-3 {
+.circle3 {
     background-color: #D81219;
     animation-delay: 0.6s;
 }
