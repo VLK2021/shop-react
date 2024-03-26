@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import classes from "./ProductsList.module.css";
 import {getAllProducts, getTotalProducts} from "../../store/slices/products.slice";
-import {Pagination, ProductCard} from "../../components";
+import {Pagination, ProductCard, Spinner} from "../../components";
 
 
 const ProductsList = () => {
@@ -19,18 +19,17 @@ const ProductsList = () => {
     }, []);
 
 
-
     return (
         <main className={`${classes.wrap} width`}>
             {error && <h1>{error}</h1>}
 
             {
-                productsArr && productsArr
-                    .map(product => <ProductCard key={product.id} product={product}/>)
+                productsArr.length > 0 ? productsArr.map(product => <ProductCard key={product.id} product={product}/>) :
+                    <Spinner/>
             }
 
             <section className={`width`}>
-                <Pagination/>
+                {productsArr.length > 0 ? <Pagination/> : null}
             </section>
         </main>
     );
